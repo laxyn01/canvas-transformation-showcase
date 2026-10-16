@@ -1,5 +1,5 @@
 // Business details. Replace the sample values below before launch.
-export const SHOW_PREVIEW_RIBBON = true;
+export const SHOW_PREVIEW_RIBBON = false;
 
 export const SITE = {
   name: "Blackline Paving", // [PLACEHOLDER] business name
