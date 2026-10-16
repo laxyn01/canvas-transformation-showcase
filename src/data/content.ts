@@ -45,3 +45,11 @@ export const PROJECTS: Project[] = [
 export type Review = { name: string; source: "google" | "facebook"; time: string; rating: number; text: string; photo?: string };
 // Paste real reviews here. While empty, clearly-labeled placeholder cards render.
 export const REVIEWS: Review[] = [];
+
+// Before & After pairs for the home page slider.
+// Placeholders for now: replace with real photos (see IMAGES in ./images).
+export type BeforeAfterPair = { title: string; before: string; after: string };
+export const BEFORE_AFTER: BeforeAfterPair[] = [
+  { title: "Driveway replacement", before: IMAGES.services.repair, after: IMAGES.services.driveway },
+  { title: "Crack seal & sealcoat", before: IMAGES.services.crack, after: IMAGES.services.sealcoat },
+];

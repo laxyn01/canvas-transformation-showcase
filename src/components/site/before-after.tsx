@@ -32,7 +32,7 @@ export function BeforeAfter({ before, after, title, className, initial = 50 }: P
           loading="lazy"
           decoding="async"
           draggable={false}
-          className="absolute inset-0 h-full w-full object-cover grayscale"
+          className="absolute inset-0 h-full w-full object-cover"
           style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
         />
 
