@@ -104,9 +104,14 @@ export function MobileBar() {
 }
 
 export function Ribbon() {
+  // Corner sash: clips only the bottom-left corner so it never covers hero text or buttons.
+  // On mobile it lifts above the sticky call bar once that bar appears.
+  const { scrollY } = useScroll();
+  const [barUp, setBarUp] = useState(false);
+  useMotionValueEvent(scrollY, "change", (v) => setBarUp(v > 500));
   if (!SHOW_PREVIEW_RIBBON) return null;
   return (
-    <div aria-hidden className="pointer-events-none fixed -left-12 bottom-24 z-50 w-48 -rotate-45 bg-primary py-1 text-center text-[11px] font-bold uppercase tracking-widest text-primary-foreground lg:bottom-8">
+    <div aria-hidden className={cn("pointer-events-none fixed -left-[52px] z-50 w-48 rotate-45 bg-primary py-1 text-center text-[11px] font-bold uppercase tracking-widest text-primary-foreground transition-[bottom] duration-300 lg:bottom-8", barUp ? "bottom-[104px]" : "bottom-8")}>
       Demo Preview
     </div>
   );

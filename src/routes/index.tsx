@@ -2,10 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { BadgeCheck, Clock, Hammer, MessageSquare, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { useState } from "react";
+import { BeforeAfter } from "@/components/site/before-after";
 import { AreaChecker, QuickQuote } from "@/components/site/forms";
 import { btn, CallButton, EstimateButton, Item, Reveal, SectionHead } from "@/components/site/primitives";
 import { CtaBand, GalleryTile, Lightbox, Marquee, Process, ReviewsSection, ServiceGrid } from "@/components/site/sections";
-import { AREAS, PROJECTS } from "@/data/content";
+import { AREAS, BEFORE_AFTER, PROJECTS } from "@/data/content";
 import { IMAGES } from "@/data/images";
 import { SERVICES } from "@/data/services";
 import { SITE } from "@/data/site";
@@ -34,7 +35,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
         <div className="container-x relative grid items-end gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <h1 className="text-[3.4rem] leading-[0.9] sm:text-7xl md:text-8xl lg:text-[7.5rem]">
+            <h1 className="text-[2.6rem] leading-[0.92] sm:text-6xl md:text-7xl lg:text-[min(5.5rem,10.5vh)]">
               {LINES.map((l, i) => (
                 <span key={l} className="block overflow-hidden">
                   <motion.span className={i === 2 ? "block text-primary" : "block"} initial={{ y: "105%" }} animate={{ y: 0 }} transition={{ delay: 0.15 + i * 0.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>{l}</motion.span>
@@ -86,6 +87,17 @@ function Home() {
             ))}
           </Reveal>
           <Lightbox items={gallery} index={idx} onClose={() => setIdx(null)} onIndex={setIdx} />
+        </div>
+      </section>
+
+      <section className="section-y border-t border-border">
+        <div className="container-x">
+          <SectionHead eyebrow="Before & After" title="See the difference" text="Sample images showing the kind of transformation we deliver." />
+          <Reveal className="grid gap-6 md:grid-cols-2">
+            {BEFORE_AFTER.map((p) => (
+              <Item key={p.title}><BeforeAfter title={p.title} before={p.before} after={p.after} /></Item>
+            ))}
+          </Reveal>
         </div>
       </section>
 
