@@ -45,7 +45,7 @@ export function BeforeAfter({ before, after, title, className, initial = 50 }: P
         <span aria-hidden className="pointer-events-none absolute left-3 top-3 rounded-md bg-background/85 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-foreground">Before</span>
         <span aria-hidden className="pointer-events-none absolute right-3 top-3 rounded-md bg-primary px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-primary-foreground">After</span>
         <span aria-hidden className="pointer-events-none absolute bottom-3 right-3 rounded bg-background/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Sample image</span>
-        <span aria-hidden className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-background/70 px-3 py-1 text-xs font-medium text-foreground">← Drag to compare →</span>
+        <span aria-hidden className="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap sm:bottom-3 rounded-full bg-background/70 px-3 py-1 text-xs font-medium text-foreground">← Drag to compare →</span>
 
         <input
           type="range"
